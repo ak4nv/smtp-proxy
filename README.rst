@@ -17,6 +17,8 @@ Installation
 $ git clone https://github.com/ak04nv/smtp-proxy.git /var/www/aiosmtpd
 $ cd /var/www/aiosmtpd
 $ virtualenv -p python3 .env
+$ source .env/bin/activate
+$ pip install -r requirements.txt
 $ chown -R www-data:www-data .
 
 Create `config.ini` file and fill it like content below
