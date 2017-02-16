@@ -1,8 +1,8 @@
 About
 =====
 
-This is a dead simple smtp proxy for quick getting mails and resend it
-in asynchronous mode via external smtp server.
+This is a dead simple smtp proxy server for quickly getting mails and
+sending it in asynchronous mode with external smtp server.
 
 Requirements
 ============
