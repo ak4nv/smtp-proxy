@@ -1,0 +1,13 @@
+[Unit]
+Description=Aiosmtp Daemon
+After=network-online.target
+
+[Service]
+User=www-data
+Group=www-data
+WorkingDirectory=/var/www/aiosmtpd
+Type=simple
+ExecStart=.env/bin/smtpd -n -c proxy.Sendmail -l :1025
+
+[Install]
+WantedBy=multi-user.target
