@@ -1,10 +1,10 @@
 import os
+import logging
 import asyncio
 import aiosmtplib
 import configparser
 
-from traceback import print_exc
-from datetime import datetime as dt
+log = logging.getLogger('aiosmtpd')
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 config = os.path.join(BASE_DIR, 'config.ini')
@@ -27,7 +27,7 @@ smtp = aiosmtplib.SMTP(hostname=server, port=port, loop=loop, use_tls=False)
 class Sendmail:
 
     def process_message(self, peer, mailfrom, rcpttos, data, **kws):
-        print('{0}: Got a mail from {1}'.format(dt.now(), mailfrom))
+        log.info('Got a mail from %s', mailfrom)
         loop.create_task(self.delivery(mailfrom, rcpttos, data))
 
     async def delivery(self, mailfrom, rcpttos, data):
@@ -38,6 +38,6 @@ class Sendmail:
             await smtp.login(username, password)
             await smtp.sendmail(mailfrom, rcpttos, data)
         except Exception as e:
-            print_exc()
+            log.exception('Sending was failed')
         else:
-            print('{0}: Mail has been successfully sent to {1}'.format(dt.now(), rcpttos))
+            log.info('Mail has been successfully sent to %s', rcpttos)
