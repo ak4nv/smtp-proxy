@@ -4,7 +4,8 @@ import asyncio
 import aiosmtplib
 import configparser
 
-log = logging.getLogger('aiosmtpd')
+log = logging.getLogger(__name__)
+log.setLevel(logging.INFO)
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 config = os.path.join(BASE_DIR, 'config.ini')
