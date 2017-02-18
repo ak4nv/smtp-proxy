@@ -41,6 +41,8 @@ Activation
   $ systemd enable smtp-proxy.service
   $ systemd start smtp-proxy.service
 
+Service binds on localhost and 1025 port by default. You can change it in ``smtp-proxy.service`` file in ``ExecStart`` param.
+
 Finally
 =======
 
