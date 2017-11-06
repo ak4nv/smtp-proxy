@@ -11,4 +11,4 @@ Environment=PYTHONPATH=.
 ExecStart=/var/www/aiosmtpd/.env/bin/smtpd -n -c proxy.Sendmail -l :1025
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target
