@@ -1,7 +1,7 @@
 About
 =====
 
-This is a deadly simple smtp proxy server for quickly getting mails and
+This is a dead simple smtp proxy server for quickly getting mails and
 sending it in asynchronous mode with external smtp server.
 
 Requirements
@@ -40,6 +40,8 @@ Activation
   $ cd /etc/systemd/system
   $ systemd enable smtp-proxy.service
   $ systemd start smtp-proxy.service
+
+Service binds on localhost and 1025 port by default. You can change it in ``smtp-proxy.service`` file in ``ExecStart`` param.
 
 Finally
 =======
