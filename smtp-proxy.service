@@ -5,10 +5,10 @@ After=network-online.target
 [Service]
 User=www-data
 Group=www-data
-WorkingDirectory=/var/www/aiosmtpd
+WorkingDirectory=/srv/aiosmtpd
 Type=simple
 Environment=PYTHONPATH=.
-ExecStart=/var/www/aiosmtpd/.env/bin/smtpd -n -c proxy.Sendmail -l :1025
+ExecStart=/srv/aiosmtpd/.env/bin/smtpd -n -c proxy.Sendmail -l :1025
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target

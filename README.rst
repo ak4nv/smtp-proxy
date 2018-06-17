@@ -14,8 +14,8 @@ Installation
 
 .. code-block:: bash
 
-  $ git clone https://github.com/ak04nv/smtp-proxy.git /var/www/aiosmtpd
-  $ cd /var/www/aiosmtpd
+  $ git clone https://github.com/ak04nv/smtp-proxy.git /srv/aiosmtpd
+  $ cd /srv/aiosmtpd
   $ virtualenv -p python3 .env
   $ source .env/bin/activate
   $ pip install -r requirements.txt
