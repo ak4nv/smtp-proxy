@@ -8,7 +8,7 @@ Group=www-data
 WorkingDirectory=/srv/aiosmtpd
 Type=simple
 Environment=PYTHONPATH=.
-ExecStart=/srv/aiosmtpd/.env/bin/smtpd -n -c proxy.Sendmail -l :1025
+ExecStart=/srv/aiosmtpd/.env/bin/aiosmtpd -n -c proxy.Sendmail -l :1025
 
 [Install]
 WantedBy=default.target
