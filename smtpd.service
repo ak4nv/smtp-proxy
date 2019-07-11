@@ -1,5 +1,5 @@
 [Unit]
-Description=Aiosmtp Daemon
+Description=Aiosmtp Proxy Daemon
 After=network-online.target
 
 [Service]
@@ -8,7 +8,7 @@ Group=www-data
 WorkingDirectory=/srv/aiosmtpd
 Type=simple
 Environment=PYTHONPATH=.
-ExecStart=/srv/aiosmtpd/.env/bin/aiosmtpd -n -c proxy.Sendmail -l :1025
+ExecStart=/srv/aiosmtpd/.venv/bin/aiosmtpd -n -c proxy.Sendmail -l :1025
 
 [Install]
 WantedBy=default.target

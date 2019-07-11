@@ -7,7 +7,7 @@ sending it in asynchronous mode with external smtp server.
 Requirements
 ============
 
-Python 3.5.3+, compiled with SSL support, is required.
+Python 3.6+, compiled with SSL support, is required.
 
 Installation
 ============
@@ -16,8 +16,8 @@ Installation
 
   $ git clone https://github.com/ak04nv/smtp-proxy.git /srv/aiosmtpd
   $ cd /srv/aiosmtpd
-  $ virtualenv -p python3 .env
-  $ source .env/bin/activate
+  $ virtualenv -p python3 .venv
+  $ source .venv/bin/activate
   $ pip install -r requirements.txt
   $ chown -R www-data:www-data .
 
@@ -36,12 +36,12 @@ Activation
 
 .. code-block:: bash
 
-  $ cp smtp-proxy.service /etc/systemd/system
+  $ cp smtpd.service /etc/systemd/system
   $ cd /etc/systemd/system
-  $ systemd enable smtp-proxy.service
-  $ systemd start smtp-proxy.service
+  $ systemd enable smtpd.service
+  $ systemd start smtpd.service
 
-Service binds on localhost and 1025 port by default. You can change it in ``smtp-proxy.service`` file in ``ExecStart`` param.
+Service binds on localhost and 1025 port by default. You can change it in ``smtpd.service`` file in ``ExecStart`` param.
 
 Finally
 =======
@@ -51,7 +51,7 @@ this command for seeing logs.
 
 .. code-block:: bash
 
-  $ journalctl -u smtp-proxy.service
+  $ journalctl -u smtpd.service
 
 License
 =======
