@@ -1,4 +1,4 @@
-aiosmtpd==1.2
+aiosmtpd==1.4.5
 aiosmtplib==1.0.6
 appdirs==1.4.3
 atpublic==1.0
