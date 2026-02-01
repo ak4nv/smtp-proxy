@@ -14,12 +14,12 @@ Installation
 
 .. code-block:: bash
 
-  $ git clone https://github.com/ak04nv/smtp-proxy.git /srv/aiosmtpd
-  $ cd /srv/aiosmtpd
-  $ virtualenv -p python3 .venv
-  $ source .venv/bin/activate
-  $ pip install -r requirements.txt
-  $ chown -R www-data:www-data .
+  git clone https://github.com/ak4nv/smtp-proxy.git /srv/aiosmtpd
+  cd /srv/aiosmtpd
+  virtualenv -p python3 .venv
+  source .venv/bin/activate
+  pip install -r requirements.txt
+  chown -R www-data:www-data .
 
 
 Create `config.ini` file and fill it like content below
@@ -36,10 +36,9 @@ Activation
 
 .. code-block:: bash
 
-  $ cp smtpd.service /etc/systemd/system
-  $ cd /etc/systemd/system
-  $ systemd enable smtpd.service
-  $ systemd start smtpd.service
+  cp smtpd.service /etc/systemd/system
+  systemd enable smtpd.service
+  systemd start smtpd.service
 
 Service binds on localhost and 1025 port by default. You can change it in ``smtpd.service`` file in ``ExecStart`` param.
 
@@ -51,9 +50,4 @@ this command for seeing logs.
 
 .. code-block:: bash
 
-  $ journalctl -u smtpd.service
-
-License
-=======
-
-MIT License
+  journalctl -u smtpd.service
